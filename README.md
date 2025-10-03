@@ -12,7 +12,7 @@ A fully local proof-of-concept for automated root-cause analysis (RCA) using:
 - `src` should contain `.py` files for deployment.
 - `notebooks` should have jupyter notebooks for exploration.
 - `weights` should include pre-trained weights (models).
-- [config.ini](.): for mainly configuration setting
+- [config.ini](config.ini): for mainly configuration setting
 - [src/utils](./src/utils/): for utilities like custom logging
 
 ## Poetry environment for development
