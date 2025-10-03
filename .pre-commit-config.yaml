@@ -15,16 +15,8 @@ repos:
         types_or: [python, pyi]
         require_serial: true
 
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0  # Use the latest stable version
+    hooks:
       - id: trailing-whitespace
-        name: Trim trailing whitespace
-        entry: trailing-whitespace-fixer
-        language: system
-        types: [text]
-        stages: [pre-commit, pre-push, manual]
-
       - id: end-of-file-fixer
-        name: Fix end of files
-        entry: end-of-file-fixer
-        language: system
-        types: [text]
-        stages: [pre-commit, pre-push, manual]
