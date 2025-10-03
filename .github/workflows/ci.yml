@@ -5,9 +5,10 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
-  lint-build:
+  pre-commit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,23 +16,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"  # You can adjust as needed
-
-      - name: Install Poetry
-        run: |
-          pip install poetry
+          python-version: '3.x'
 
       - name: Install pre-commit
         run: pip install pre-commit
 
-      - name: Install dependencies with Poetry
-        run: poetry install
-
       - name: Run pre-commit on all files
         run: pre-commit run --all-files
-
-      - name: Build wheel with Poetry
-        run: poetry build
-
-      - name: List wheel files (optional)
-        run: ls -lh dist/
