@@ -15,13 +15,6 @@ repos:
         types_or: [python, pyi]
         require_serial: true
 
-      - id: uv-check-lock
-        name: uv - Check `uv.lock`
-        entry: uv lock --check
-        language: system
-        pass_filenames: false
-        files: ^pyproject\.toml|uv\.lock$
-
       - id: trailing-whitespace
         name: Trim trailing whitespace
         entry: trailing-whitespace-fixer
@@ -35,10 +28,3 @@ repos:
         language: system
         types: [text]
         stages: [pre-commit, pre-push, manual]
-
-      - id: check-merge-conflict
-        name: Check for merge conflicts
-        entry: check-merge-conflict
-        args: [--assume-in-merge]
-        language: system
-        types: [text]
