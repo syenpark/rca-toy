@@ -117,20 +117,28 @@ Create your package.
 3. Then, you should be able to run main.py with this.
 
     ```shell
-    repository
+    rca [--verbose]
     ```
 
 ## Log useage
 
+In `main.py`,
+
 ```python
+"""main."""
+
+from __future__ import annotations
+
 import logging
+
+import typer
 
 from src.utils.logging import SetLogger
 
-# Leave the arguments empty if you don't want to generate the log file
 logger = SetLogger().logger
 
 app = typer.Typer()
+
 
 def setup_logging() -> None:
     """Set up logging level."""
@@ -145,17 +153,9 @@ def setup_logging() -> None:
 @app.command()
 def main(
     *,
-    verbose: Annotated[bool, typer.Option(help="Verbose mode")] = False,
+    verbose: typer.Annotated[bool, typer.Option(help="Verbose mode")] = False,
 ) -> None:
     """Recieve meta data for analytics."""
     if verbose:
         setup_logging()
-```
-
-If you installed the whl file,
-
-```python
-import logging
-
-from .utils.logging import SetLogger
 ```
