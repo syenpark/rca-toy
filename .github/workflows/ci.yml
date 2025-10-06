@@ -24,7 +24,7 @@ jobs:
           pip install poetry
 
       - name: Install dependencies (including dev)
-        run: poetry install
+        run: poetry install --with dev
 
       - name: Install pre-commit hooks
         run: poetry run pre-commit install --install-hooks
