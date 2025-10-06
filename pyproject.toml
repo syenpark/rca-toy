@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "rca-toy"
-version = "0.1.0"
+version = "0.1.1"
 description = "Root cause analysis using LLMs"
 authors = ["Syen Park <syen.park@connect.ust.hk>"]
 packages = [{ include = "src"}]
 readme = "README.md"
 
 [tool.poetry.scripts]
-repository = "src.main:app"
+rca = "src.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.12"
